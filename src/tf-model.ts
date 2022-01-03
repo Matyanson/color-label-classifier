@@ -52,7 +52,7 @@ export const train = async (trainingPairs: Pair[]) => {
     const ys = tf.oneHot(labelsTensor, 6);
 
     const trainIteration = await model.fit(xs, ys, {
-        epochs: 5,
+        epochs: 50,
         shuffle: true,
         validationSplit: 0.1,
         callbacks: {

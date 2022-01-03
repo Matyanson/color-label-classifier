@@ -10,6 +10,7 @@ style={`
 		<h1>What is this color?</h1>
 	</div>
 	<div class="options">
+		<div class="counter">{$pairs.length}</div>
 		{#each labels as l, index}
 			<button 
 				style={`--c:${l};` + (index == predictedColorIndex ? 'border-color: red' : '')}
@@ -87,6 +88,7 @@ style={`
 		justify-content: center;
 	}
 	.options {
+		position: relative;
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: center;
@@ -109,5 +111,14 @@ style={`
 		padding-right: 2.3rem;
 		border-radius: 20px;
 		overflow: hidden;
+	}
+	.options button:hover {
+		border-color: darkblue;
+		filter: brightness(0.8);
+	}
+	.counter {
+		position: absolute;
+		top: 10px;
+    left: 30px;
 	}
 </style>
